@@ -18,18 +18,18 @@ data = tasks.get_all_values()
 
 
 def add_todo(todo, due_date):
-    '''
+    """
     Create a new ToDo row in the tasks worksheet that collects
     and adds input values from the todo and due_date variables.
     Set Done to "No" for every new ToDo.
-    '''
+    """
 
     new_todo = [todo, due_date, "No"]
     tasks.append_row(new_todo)
     
 
 def list_todos():
-    '''
+    """
     Get all data from the tasks worksheet and check if the
     number of rows is more than 1 (header row). If True, 
     iterate through the worksheet list and assign all the row 
@@ -38,7 +38,7 @@ def list_todos():
     To keep track of the row positions, enumerate is used to
     add a counter to each row. Starting from row 2 (index 1).
     https://www.w3schools.com/python/ref_func_enumerate.asp
-    '''
+    """
 
     if len(data) > 1:
         print("My ToDo List\n")
@@ -49,26 +49,26 @@ def list_todos():
     
 
 def date_validation(date_str):
-    '''
+    """
     Validate input string for date. Check that length value
     is equal to 6 characters, if not (!=) return False. 
     Slice input data (yymmdd) between year, month, and day 
     and convert strings to integers. Validate sliced data to 
     be within valid date range and return if it's True.
-    '''
+    """
 
     try:
         if len(date_str) != 6:
             return False
         year, month, day = int(date_str[:2]), int(
             date_str[2:4]), int(date_str[4:])
-        return 1 <= month <= 12 and 1 <= day <= 31
+        return 1 <= year <= 99 and 1 <= month <= 12 and 1 <= day <= 31
     except ValueError:
         return False
     
 
 def mark_done(todo_index):
-    '''
+    """
     Function to update the DONE column in the worksheet from "No"
     to "Yes". To prevent users from updating a non-existing ToDo, 
     an if statement is checking that all ToDos is within the actual
@@ -77,7 +77,7 @@ def mark_done(todo_index):
     If a ToDo is already marked in the third column (index 2), a
     new marking can't be done which is controlled by the if 
     statement that checks if the value is not equal (!=) to "Yes"
-    '''
+    """
 
     if 1 <= todo_index <= len(data) - 1:
         if data[todo_index][2] != "Yes":
@@ -91,7 +91,7 @@ def mark_done(todo_index):
 
 
 def main():
-    '''
+    """
     This function displays the main menu and handles the user input 
     thats validated by try/except blocks. 
     
@@ -99,7 +99,7 @@ def main():
     __name__ to control how this app is being executed; as a script in 
     the command line or imported to another app as a module: 
     https://docs.python.org/3/library/__main__.html
-    '''
+    """
 
     while True:
         print("\n-------------------\nMy Todo Menu:\n-------------------\n")
