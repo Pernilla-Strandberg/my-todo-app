@@ -23,7 +23,13 @@ def add_todo(todo, due_date):
     
 
 def list_todos():
-    print("List todos")
+    if len(data) > 1:
+        print("My ToDo List\n")
+        for i, todo in enumerate(data[1:], start=1):
+            print(
+                f"{i}. ToDo: {todo[0]}, Due Date: {todo[1]}, Done: {todo[2]}")
+    else:
+        print("Your ToDo list is empty.")
     
 
 def date_validation(date_str):
@@ -67,7 +73,7 @@ def main():
 
         elif choice == "2":
             print("\n-------------------\n2. List ToDos:\n-------------------\n")
-            
+            list_todos()
 
         elif choice == "3":
             print("\n-------------------\n3. Mark ToDo as Done:\n-------------------\n")
