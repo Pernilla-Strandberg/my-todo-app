@@ -17,17 +17,28 @@ tasks = SHEET.worksheet('tasks')
 data = tasks.get_all_values()
 
 
-def add_todo():
+def add_todo(todo, due_date):
+    new_todo = [todo, due_date, "No"]
+    tasks.append_row(new_todo)
     
 
 def list_todos():
+    print("List todos")
     
 
-def date_validation():
+def date_validation(date_str):
+    try:
+        if len(date_str) != 6:
+            return False
+        year, month, day = int(date_str[:2]), int(
+            date_str[2:4]), int(date_str[4:])
+        return 1 <= month <= 12 and 1 <= day <= 31
+    except ValueError:
+        return False
     
 
 def mark_done():
-    
+    print("Mark Done")
 
 
 def main():
@@ -44,6 +55,14 @@ def main():
 
         if choice == "1":
             print("\n-------------------\n1. Add Todo:\n-------------------\n")
+            todo = input("\nDescribe your ToDo:\n")
+            due_date = input("\nGreat! Now, give it a due date (YYMMDD): ")
+            if date_validation(due_date):
+                add_todo(todo, due_date)
+                print("\nPerfect! Your new ToDo was added successfully!")
+            else:
+                print(
+                    "\nOh, something is wrong with the date format you entered.\nTry to write it as YYMMDD.")
         
 
         elif choice == "2":
