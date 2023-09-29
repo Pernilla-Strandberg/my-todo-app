@@ -1,32 +1,64 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# My ToDo App
 
-Welcome,
+**My ToDo App** is a Python command-line application that helps you manage your ToDo list efficiently. It allows you to add a new task, list existing ones and mark a task as done. The app is connected to a Google spreadsheet that will be updated through user input in the CLI.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
 
-## Reminders
+## Features
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+### 1. **Add ToDo**
+   Add new task to your list with a description and a due date.
+   ![Add ToDo](assets/images/add_todo.png)
 
-## Creating the Heroku app
+### 2. **List ToDos**
+   View all tasks in your ToDo list including descriptions, due dates, and statuses.
+   ![List ToDos](assets/images/list_todos.png)
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+### 3. **Mark ToDo as Done**
+   Mark task as done, keeping track of your progress.
+   ![Mark ToDo as Done](assets/images/mark_done.png)
 
-1. `heroku/python`
-2. `heroku/nodejs`
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+## Benefits
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+- **Efficient Task Management:** Stay organized by adding, viewing, and completing tasks from the command line.
+- **Time Management:** Set due dates for tasks to prioritize your workload effectively.
+- **Ease of Use:** Simple and intuitive interface, making task management quick and hassle-free.
+- **Error Prevention:** Built-in validation and error handling ensure accurate input and prevent common mistakes.
 
-Connect your GitHub repository and deploy as normal.
 
-## Constraints
+## How to Use
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/Pernilla-Strandberg/my-todo-app.git
+   cd my-todo-app
 
----
+2. **Install Dependencies:**
+   ```bash
+   pip install -r requirements.txt
 
-Happy coding!
+3. **Run the Application:**
+   ```bash
+   python3 run.py
+
+4. **Follow On-Screen Instructions:**
+- From the menu, choose to add, list or mark tasks.
+- Quit the app by select Quit from the menu.
+
+
+## Testing
+
+My ToDo App has been thoroughly tested using the **Trunk Check** extension for Visual Studio Code, ensuring reliable and error-free operation.
+
+
+## Deployment
+
+The application is deployed on GitHub and Heroku for easy access and usage.
+
+- **GitHub Repository:** [https://github.com/Pernilla-Strandberg/my-todo-app.git](https://github.com/Pernilla-Strandberg/my-todo-app.git)
+- **Heroku Deployment:** [https://my-todo-list-app-fb3d481c53c9.herokuapp.com/](https://my-todo-list-app-fb3d481c53c9.herokuapp.com/)
+
+
+## Credits
+
+Sources and additional information can be found in the docstrings within the codebase.
